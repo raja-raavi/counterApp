@@ -1,1 +1,17 @@
-<p>counter works!</p>
+<div class="counter-wrapper">
+    <!-- Heading at the top -->
+    <h1>Counter Application</h1>
+
+    <!-- Buttons centered in the middle -->
+    <div class="button-row">
+        <button (click)="increment()">➕ Increment</button>
+        <button (click)="decrement()">➖ Decrement</button>
+        <button class="reset-btn" (click)="reset()">🔁 Reset</button>
+    </div>
+
+    <!-- Count shown below the buttons -->
+    <div class="count-display">
+        <!-- Conditional Styling -->
+        <h3 [ngStyle]="{color: count>=0 ? 'green': 'red'}">Current Count: {{ count }}</h3>
+    </div>
+</div>
