@@ -1,9 +1,9 @@
-<div *ngIf="trackHistory.length > 0">
-    <h4>Action History</h4>
+<div>
+    <h4>{{trackHistory.length>0 ? 'Action History' : 'History Cleared'}}</h4>
     <ol>
-        <li *ngFor="let entry of trackHistory; let i = index">
+        <li *ngFor=" let entry of trackHistory; let i=index">
             {{ entry }}
         </li>
     </ol>
-    <button class="clear-history" (click)="clearHistory()">clear history</button>
+    <button class="clear-history" (click)="clearHistory()" *ngIf="trackHistory.length > 0">clear history</button>
 </div>
